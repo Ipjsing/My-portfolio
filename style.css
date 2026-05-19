@@ -17,8 +17,9 @@ body {
 }
 
 body {
-  background: radial-gradient(circle at top left, rgba(46, 125, 255, 0.18), transparent 32%),
-    linear-gradient(180deg, #06111d 0%, #08101d 100%);
+  background: radial-gradient(circle at top left, rgba(51, 137, 255, 0.16), transparent 28%),
+    radial-gradient(circle at 85% 10%, rgba(95, 255, 195, 0.08), transparent 14%),
+    linear-gradient(180deg, #06111d 0%, #081c2c 100%);
 }
 
 img {
@@ -41,7 +42,13 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0;
+  padding: 1.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(18px);
+  background: rgba(2, 13, 29, 0.86);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .brand span {
@@ -341,5 +348,41 @@ h1 {
 
   .btn {
     width: 100%;
+  }
+}
+
+.whatsapp-float {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.95rem 1.2rem;
+  background: #25d366;
+  color: #051012;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.24);
+}
+
+.whatsapp-float svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  fill: currentColor;
+}
+
+@media (max-width: 640px) {
+  .whatsapp-float {
+    right: 1rem;
+    bottom: 1rem;
+    padding: 0.85rem 1rem;
   }
 }
